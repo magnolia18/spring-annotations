@@ -24,5 +24,3 @@ public class Actor {
         return age;
     }
 }
-
-
