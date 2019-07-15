@@ -1,4 +1,4 @@
-
+springxmlannotations.iml
+target/
+pom.xml
 .idea
-target
-Springtask.iml
