@@ -1,6 +1,7 @@
-
 package com.stackroute;
 
+import com.stackroute.domain.BeanLifecycleDemoBean;
+import com.stackroute.domain.BeanPostProcessorDemoBean;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.config.BeanDefinition;
@@ -19,21 +20,8 @@ public class Main {
     {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.stackroute.domain");
 
-        Movie movie1 = context.getBean("movieObj1",Movie.class);
-        movie1.display();
-
-        Movie movie2 = context.getBean("movieObj2",Movie.class);
-        movie2.display();
-
-        Movie movie3 = context.getBean("movieObj3",Movie.class);
-        movie3.display();
-
-        Movie movie4 = context.getBean("movieObj3",Movie.class);
-
-        System.out.println(movie3 == movie4);
-
-        Movie movie5 = (Movie) context.getBean("movieObject");
-        movie5.display();
+        Movie movie = context.getBean("movieObj",Movie.class);
+        movie.display();
+        BeanPostProcessorDemoBean beanPostProcessorDemoBean =  (BeanPostProcessorDemoBean) context.getBean("beanPostProcessorDemo");
     }
-
 }
