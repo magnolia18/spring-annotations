@@ -13,17 +13,22 @@ public class ConfigClass {
 
 	@Bean
 	public Movie movieObj (){
+		return new Movie(actor());
+	}
+
+	@Bean
+	public Movie movieObj1 (){
 		return new Movie(actorObj());
 	}
 
 	@Bean
 	public Actor actorObj (){
-		return new Actor("sivakarthikeyan","male",30);
+		return new Actor("ajith","male",39);
 	}
 
-	@Bean(initMethod = "customInit", destroyMethod = "customDestroy")
-	public BeanLifecycleDemoBean beanLifeCycle() {
-		return new BeanLifecycleDemoBean();
+	@Bean
+	public Actor actor (){
+		return new Actor("sivakarthikeyan","male",30);
 	}
 
 }
