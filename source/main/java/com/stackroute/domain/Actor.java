@@ -1,37 +1,17 @@
 package com.stackroute.domain;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Actor {
 
+    @Value("Vijay")
     private String name;
 
-    public Actor(String name, String gender, int age) {
-        this.name = name;
-        this.gender = gender;
-    }
-
-    @Override
-    public String toString() {
-        return "Actor{" +
-                "name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
-                '}';
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
+    @Value("male")
     private String gender;
-    private int age;
 
+    @Value("35")
+    private int age;
 
     public String getName() {
         return name;
